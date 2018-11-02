@@ -7,7 +7,7 @@ class AppHost {
   public routePrv: Routes = new Routes();
 
   constructor() {
-    this.app = express.default();
+    this.app = express();
     this.config();
     this.routePrv.routes(this.app)
   }
