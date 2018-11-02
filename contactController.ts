@@ -9,7 +9,7 @@ mongoose.connect(
   uri,
   err => {
     if (err) {
-      console.log(err);
+      console.warn(err);
     } else {
       console.log('Connected to MongoDb');
     }
@@ -17,56 +17,59 @@ mongoose.connect(
 );
 
 export class ContactController {
-  public addNewContact(req: Request, res: Response) {
+  public async addNewContact(req: Request, res: Response) {
     let newContact = new Contact(req.body);
 
-    newContact.save((err, contact) => {
-      if (err) {
-        res.send(err);
-      }
+    try {
+      await newContact.save();
+      res.json(newContact);
+    } catch (err) {
+      console.warn(err);
+      res.status(500).send(err);
+    }
+  }
+
+  public async getContacts(req: Request, res: Response) {
+    try {
+      let contacts = await Contact.find({});
+      res.json(contacts);
+    } catch (err) {
+      console.warn(err);
+      res.status(500).send(err);
+    }
+  }
+
+  public async findContactById(req: Request, res: Response) {
+    try {
+      let contact = await Contact.findById(req.params.contactId);
       res.json(contact);
-    });
+    } catch (err) {
+      console.warn(err);
+      res.status(500).send(err);
+    }
   }
 
-  public getContacts(req: Request, res: Response) {
-    Contact.find({}, (err, contact) => {
-      if (err) {
-        res.send(err);
-      }
+  public async updateContact(req: Request, res: Response) {
+    try {
+      let contact = await Contact.findByIdAndUpdate(
+        req.params.contactId,
+        req.body,
+        { new: true }
+      );
       res.json(contact);
-    });
+    } catch (err) {
+      console.warn(err);
+      res.status(500).send(err);
+    }
   }
 
-  public findContactById(req: Request, res: Response) {
-    Contact.findById(req.params.contactId, (err, contact) => {
-      if (err) {
-        res.send(err);
-      }
-      res.json(contact);
-    });
+  public async deleteContact(req: Request, res: Response) {
+    try {
+      await Contact.findByIdAndDelete(req.params.contactId);
+      res.sendStatus(200);
+    } catch (err) {
+      console.warn(err);
+      res.status(500).send(err);
+    }
   }
-
-  public updateContact(req: Request, res: Response) {
-    Contact.findByIdAndUpdate(
-      req.params.contactId,
-      req.body,
-      { new: true },
-      (err, contact) => {
-        if (err) {
-          res.send(err);
-        }
-        res.json(contact);
-      }
-    );
-  }
-
-  public deleteContact(req: Request, res: Response) {
-    Contact.findByIdAndDelete(req.params.contactId, (err, contact) => {
-      if (err) {
-        res.send(err);
-      }
-      res.json(contact);
-    });
-  }
-
 }
