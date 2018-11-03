@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "0ce1ff0b-b7b7-417f-a7e1-562c6c08e258",
+		"name": "SampleNodeTS-REST-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Root (Heroku)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://node-mongo-crud-api.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"node-mongo-crud-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contacts (Heroku)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://node-mongo-crud-api.herokuapp.com/contact",
+					"protocol": "https",
+					"host": [
+						"node-mongo-crud-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Lorenzo\",\n\t\"lastName\":\"Maiorfi\",\n\t\"email\":\"maiorfi@gmail.com\",\n\t\"company\":\"ACME s.r.l.\",\n\t\"phone\":\"0755918309\",\n\t\"createdAt\":\"2018-11-02T15:45:29+0100\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Contact (Heroku)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Lorenzo\",\n\t\"lastName\":\"Maiorfi\",\n\t\"email\":\"maiorfi@gmail.com\",\n\t\"company\":\"ACME s.r.l.\",\n\t\"phone\":\"0755918309\",\n\t\"createdAt\":\"2018-11-02T15:45:29+0100\"\n}"
+				},
+				"url": {
+					"raw": "https://node-mongo-crud-api.herokuapp.com/contact",
+					"protocol": "https",
+					"host": [
+						"node-mongo-crud-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Giuseppe\",\n    \"lastName\": \"Verdi\",\n    \"email\": \"verdi@gmail.com\",\n    \"company\": \"Verdidrome s.p.a.\",\n    \"phone\": \"3492323423\",\n    \"createdAt\": \"2018-11-02T18:01:00.000Z\",\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/contact/5bdc8358f9160651a89dc8ed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"5bdc8358f9160651a89dc8ed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact (Heroku)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Giuseppe\",\n    \"lastName\": \"Verdi\",\n    \"email\": \"verdi@gmail.com\",\n    \"company\": \"Verdidrome s.r.l.\",\n    \"phone\": \"3492323423\",\n    \"createdAt\": \"2018-11-02T18:01:00.000Z\"\n}"
+				},
+				"url": {
+					"raw": "https://node-mongo-crud-api.herokuapp.com/contact/5bdd46a64c24af0004b57766",
+					"protocol": "https",
+					"host": [
+						"node-mongo-crud-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"contact",
+						"5bdd46a64c24af0004b57766"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contact (by Id)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/contact/5bdc8743e98ed22560dec553",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"5bdc8743e98ed22560dec553"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contact (by Id) Heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://node-mongo-crud-api.herokuapp.com/contact/5bdd46a64c24af0004b57766",
+					"protocol": "https",
+					"host": [
+						"node-mongo-crud-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"contact",
+						"5bdd46a64c24af0004b57766"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contact FullName (by Id) Heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://node-mongo-crud-api.herokuapp.com/contact/fullname/5bdd48194c24af0004b57768",
+					"protocol": "https",
+					"host": [
+						"node-mongo-crud-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"contact",
+						"fullname",
+						"5bdd48194c24af0004b57768"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Contact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/contact/5bdc8743e98ed22560dec553",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"5bdc8743e98ed22560dec553"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Contact (Heroku)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/contact/5bdc8358f9160651a89dc8ed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"5bdc8358f9160651a89dc8ed"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
