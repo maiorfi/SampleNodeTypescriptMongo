@@ -58,6 +58,18 @@ class ContactController {
             }
         });
     }
+    getContactFullNameById(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let contact = yield contactModel_1.Contact.findById(req.params.contactId);
+                res.json(contact.fullName());
+            }
+            catch (err) {
+                console.warn(err);
+                res.status(500).send(err);
+            }
+        });
+    }
     updateContact(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

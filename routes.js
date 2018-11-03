@@ -11,7 +11,7 @@ class Routes {
                 message: 'GET request successful!'
             });
         });
-        // contact
+        // contacts
         app
             .route('/contact')
             .get(this.contactController.getContacts)
@@ -22,6 +22,10 @@ class Routes {
             .get(this.contactController.findContactById)
             .put(this.contactController.updateContact)
             .delete(this.contactController.deleteContact);
+        // other methods
+        app
+            .route('/contact/fullname/:contactId')
+            .get(this.contactController.getContactFullNameById);
     }
 }
 exports.Routes = Routes;

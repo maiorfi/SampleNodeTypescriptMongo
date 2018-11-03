@@ -51,6 +51,16 @@ export class ContactController {
     }
   }
 
+  public async getContactFullNameById(req: Request, res: Response) {
+    try {
+      let contact = await Contact.findById(req.params.contactId);
+      res.json(contact.fullName());
+    } catch (err) {
+      console.warn(err);
+      res.status(500).send(err);
+    }
+  }
+
   public async updateContact(req: Request, res: Response) {
     try {
       let contact = await Contact.findByIdAndUpdate(
