@@ -3,7 +3,9 @@ import * as mongoose from 'mongoose';
 import { Contact } from './contactModel';
 import { Request, Response } from 'express';
 
-let uri = 'mongodb://localhost:27017/zozzerie';
+let uri = process.env.MONGODB_URI;
+
+console.log(`MONGO_URI=${uri}`);
 
 mongoose.connect(
   uri,
