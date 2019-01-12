@@ -3,7 +3,7 @@ import * as mongoose from 'mongoose';
 import { Contact } from './contactModel';
 import { Request, Response } from 'express';
 
-let uri = process.env.MONGODB_URI;
+let uri = process.env.MONGODB_URI || "localhost:27017";
 
 console.log(`MONGO_URI=${uri}`);
 

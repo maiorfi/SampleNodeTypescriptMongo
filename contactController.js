@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 const contactModel_1 = require("./contactModel");
-let uri = process.env.MONGODB_URI;
+let uri = process.env.MONGODB_URI || "localhost:27017";
 console.log(`MONGO_URI=${uri}`);
 mongoose.connect(uri, err => {
     if (err) {
