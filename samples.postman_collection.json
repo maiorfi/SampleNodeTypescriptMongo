@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0ce1ff0b-b7b7-417f-a7e1-562c6c08e258",
+		"_postman_id": "464c796e-19d4-4ae5-b2c6-9d7778815b7e",
 		"name": "SampleNodeTS-REST-API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -53,6 +53,29 @@
 			"response": []
 		},
 		{
+			"name": "Get Root (Docker)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://138.68.78.136:3000",
+					"protocol": "http",
+					"host": [
+						"138",
+						"68",
+						"78",
+						"136"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Contacts",
 			"request": {
 				"method": "GET",
@@ -100,6 +123,32 @@
 			"response": []
 		},
 		{
+			"name": "Get Contacts (Docker)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://138.68.78.136:3000/contact",
+					"protocol": "http",
+					"host": [
+						"138",
+						"68",
+						"78",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create Contact",
 			"request": {
 				"method": "POST",
@@ -112,7 +161,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstName\":\"Lorenzo\",\n\t\"lastName\":\"Maiorfi\",\n\t\"email\":\"maiorfi@gmail.com\",\n\t\"company\":\"ACME s.r.l.\",\n\t\"phone\":\"0755918309\",\n\t\"createdAt\":\"2018-11-02T15:45:29+0100\"\n}"
+					"raw": "{\n\t\"firstName\":\"Mario\",\n\t\"lastName\":\"Rossi\",\n\t\"email\":\"rossi@gmail.com\",\n\t\"company\":\"ROSSI s.r.l.\",\n\t\"phone\":\"123123123\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/contact",
@@ -159,6 +208,38 @@
 			"response": []
 		},
 		{
+			"name": "Create Contact (Docker)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Giuseppe\",\n    \"lastName\": \"Verdi\",\n    \"email\": \"verdi@gmail.com\",\n    \"company\": \"Verdidrome s.r.l.\",\n    \"phone\": \"3492323423\"\n}"
+				},
+				"url": {
+					"raw": "http://138.68.78.136:3000/contact",
+					"protocol": "http",
+					"host": [
+						"138",
+						"68",
+						"78",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Update Contact",
 			"request": {
 				"method": "PUT",
@@ -171,10 +252,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Giuseppe\",\n    \"lastName\": \"Verdi\",\n    \"email\": \"verdi@gmail.com\",\n    \"company\": \"Verdidrome s.p.a.\",\n    \"phone\": \"3492323423\",\n    \"createdAt\": \"2018-11-02T18:01:00.000Z\",\n}"
+					"raw": "{\n    \"firstName\": \"Giuseppe\",\n    \"lastName\": \"Verdi\",\n    \"email\": \"verdi@gmail.com\",\n    \"company\": \"Verdidrome s.p.a.\",\n    \"phone\": \"3492323423\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/contact/5bdc8358f9160651a89dc8ed",
+					"raw": "http://localhost:3000/contact/5c39f1635953013c0cb87d94",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -182,7 +263,7 @@
 					"port": "3000",
 					"path": [
 						"contact",
-						"5bdc8358f9160651a89dc8ed"
+						"5c39f1635953013c0cb87d94"
 					]
 				}
 			},
@@ -220,6 +301,39 @@
 			"response": []
 		},
 		{
+			"name": "Update Contact (Docker)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Ezio\",\n    \"lastName\": \"Bianchi\",\n    \"email\": \"bianchi@gmail.com\",\n    \"company\": \"ABC s.r.l.\",\n    \"phone\": \"444777555\"\n}"
+				},
+				"url": {
+					"raw": "http://138.68.78.136:3000/contact/5c3af3bf1446b00010477f2f",
+					"protocol": "http",
+					"host": [
+						"138",
+						"68",
+						"78",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"5c3af3bf1446b00010477f2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Contact (by Id)",
 			"request": {
 				"method": "GET",
@@ -229,7 +343,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/contact/5bdc8743e98ed22560dec553",
+					"raw": "http://localhost:3000/contact/5c39f1635953013c0cb87d94",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -237,14 +351,14 @@
 					"port": "3000",
 					"path": [
 						"contact",
-						"5bdc8743e98ed22560dec553"
+						"5c39f1635953013c0cb87d94"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get Contact (by Id) Heroku",
+			"name": "Get Contact by Id (Heroku)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -269,7 +383,59 @@
 			"response": []
 		},
 		{
-			"name": "Get Contact FullName (by Id) Heroku",
+			"name": "Get Contact by Id (Docker)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://138.68.78.136:3000/contact/5c3af3f31446b00010477f30",
+					"protocol": "http",
+					"host": [
+						"138",
+						"68",
+						"78",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"5c3af3f31446b00010477f30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contact FullName by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/contact/fullname/5bdd48194c24af0004b57768",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"fullname",
+						"5bdd48194c24af0004b57768"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contact FullName by Id (Heroku)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -295,6 +461,34 @@
 			"response": []
 		},
 		{
+			"name": "Get Contact FullName by Id (Docker)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://138.68.78.136:3000/contact/fullname/5c39fddc3040f300105369ee",
+					"protocol": "http",
+					"host": [
+						"138",
+						"68",
+						"78",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"fullname",
+						"5c39fddc3040f300105369ee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Delete Contact",
 			"request": {
 				"method": "DELETE",
@@ -304,7 +498,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/contact/5bdc8743e98ed22560dec553",
+					"raw": "http://localhost:3000/contact/5c39f1635953013c0cb87d94",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -312,7 +506,7 @@
 					"port": "3000",
 					"path": [
 						"contact",
-						"5bdc8743e98ed22560dec553"
+						"5c39f1635953013c0cb87d94"
 					]
 				}
 			},
@@ -337,6 +531,33 @@
 					"path": [
 						"contact",
 						"5bdc8358f9160651a89dc8ed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Contact (Docker)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://138.68.78.136:3000/contact/5c3af3521446b00010477f2e",
+					"protocol": "http",
+					"host": [
+						"138",
+						"68",
+						"78",
+						"136"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"5c3af3521446b00010477f2e"
 					]
 				}
 			},

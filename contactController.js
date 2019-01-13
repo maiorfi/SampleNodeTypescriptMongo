@@ -10,16 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 const contactModel_1 = require("./contactModel");
-let uri = process.env.MONGODB_URI || "localhost:27017";
+let uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/zozzerie';
 console.log(`MONGO_URI=${uri}`);
-mongoose.connect(uri, err => {
-    if (err) {
-        console.warn(err);
-    }
-    else {
-        console.log('Connected to MongoDb');
-    }
-});
+mongoose
+    .connect(uri, { useNewUrlParser: true })
+    .then(_ => console.log('Connected to MongoDB'), err => console.warn(err));
 class ContactController {
     addNewContact(req, res) {
         return __awaiter(this, void 0, void 0, function* () {

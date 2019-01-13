@@ -1,0 +1,1 @@
+docker run -d --network "internal_network" -p 3000:5000 -d -e "MONGODB_URI=mongodb://mongodb:27017/zozzerie" -e "PORT=5000" --name my-node-app my-apps/node-app:1

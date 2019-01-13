@@ -1,0 +1,1 @@
+docker build -t my-apps/node-app:1 .

@@ -3,20 +3,16 @@ import * as mongoose from 'mongoose';
 import { Contact } from './contactModel';
 import { Request, Response } from 'express';
 
-let uri = process.env.MONGODB_URI || "localhost:27017";
+let uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/zozzerie';
 
 console.log(`MONGO_URI=${uri}`);
 
-mongoose.connect(
-  uri,
-  err => {
-    if (err) {
-      console.warn(err);
-    } else {
-      console.log('Connected to MongoDb');
-    }
-  }
-);
+mongoose
+  .connect(
+    uri,
+    { useNewUrlParser: true }
+  )
+  .then(_ => console.log('Connected to MongoDB'), err => console.warn(err));
 
 export class ContactController {
   public async addNewContact(req: Request, res: Response) {
